@@ -15,7 +15,7 @@
 const ALLOWED_ORIGINS = new Set([
     "https://domain.com",
     "https://www.domain.com",
-    "https://video.myyear.net",
+    "https://sub.domain.com",
     "http://localhost:3000",
     "http://127.0.0.1:5500"
 ]);
@@ -2019,7 +2019,7 @@ async function uploadFinish(
                 upload.video_id,
             objectKey,
             url:
-                `https://myyear.net/vid?id=` +
+                `https://domain.com/vid?id=` +
                 encodeURIComponent(
                     upload.video_id
                 )
@@ -2914,7 +2914,7 @@ async function searchVideos(request, env) {
                 Number(video.expiration_date || 0),
 
             videoUrl:
-                `https://myyear.net/vid?id=` +
+                `https://domain.com/vid?id=` +
                 encodeURIComponent(video.id),
 
             thumbnailUrl:
@@ -3117,7 +3117,7 @@ async function getPopular(request, env) {
              * Public static viewer page.
              */
             videoUrl:
-                `https://myyear.net/vid?id=` +
+                `https://domain.com/vid?id=` +
                 encodeURIComponent(video.id),
 
             /*
@@ -4191,7 +4191,7 @@ async function getAdminVideos(
                     ) === 1,
 
                 videoUrl:
-                    `https://myyear.net/vid?id=` +
+                    `https://domain.com/vid?id=` +
                     encodeURIComponent(
                         video.id
                     ),
