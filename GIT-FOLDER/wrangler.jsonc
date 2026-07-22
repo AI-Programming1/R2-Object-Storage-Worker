@@ -1,0 +1,47 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "video-worker",
+	"main": "src/index.js",
+	"compatibility_date": "2026-07-08",
+	"workers_dev": true,
+	"routes": [
+		{
+			"pattern": "domain.com/*",
+			"custom_domain": true,
+			"zone_name": "domain.com"
+		}
+	],
+	"r2_buckets": [
+		{
+			"binding": "VIDEOS",
+			"bucket_name": "videos"
+		}
+	],
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "video-db",
+			"database_id": "xxxxxxxxxxxxxxxxxxxxxxxxxx"
+		},
+		{
+			"binding": "video_db",
+			"database_name": "video-db",
+			"database_id": "xxxxxxxxxxxxxxxxxxxxxxxxxxx",
+			"remote": true
+		}
+	],
+	"observability": {
+		"enabled": true
+	},
+	"triggers": {
+		"crons": [
+			"0 3 * * *"
+		]
+	},
+	"vars": {
+		"MAX_UPLOAD_SIZE": "6442450944",
+		"CHUNK_SIZE": "8388608",
+		"MAX_TITLE": "120",
+		"MAX_DESCRIPTION": "500"
+	}
+}

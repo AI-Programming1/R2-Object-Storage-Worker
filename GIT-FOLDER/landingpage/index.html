@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <title>Watch Video</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 30px 16px;
+            background: #111827;
+            color: #f9fafb;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        video {
+            display: block;
+            width: 100%;
+            max-height: 70vh;
+            background: #000;
+            border-radius: 10px;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        #description {
+            color: #d1d5db;
+            white-space: pre-wrap;
+        }
+
+        #details {
+            margin-top: 12px;
+            color: #9ca3af;
+        }
+
+        #message {
+            padding: 18px;
+            background: #1f2937;
+            border-radius: 8px;
+        }
+
+      .expiration-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    margin-bottom: 18px;
+    padding: 16px;
+
+    color: #78350f;
+    background: #fef3c7;
+    border: 1px solid #f59e0b;
+    border-radius: 10px;
+}
+
+.expiration-banner p {
+    margin: 6px 0 0;
+}
+
+#extendButton {
+    flex-shrink: 0;
+    padding: 10px 16px;
+
+    color: white;
+    background: #b45309;
+    border: 0;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+#extendButton:disabled {
+    opacity: 0.65;
+    cursor: wait;
+}
+ 
+
+        [hidden] {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <div id="message">
+            Loading video...
+        </div>
+
+        <section id="videoSection" hidden>
+            <div id="expirationBanner" class="expiration-banner" hidden>
+    <div>
+        <strong id="expirationTitle">
+            This video will expire soon.
+        </strong>
+
+        <p id="expirationMessage"></p>
+    </div>
+
+    <button
+        id="extendButton"
+        type="button"
+        hidden
+    >
+        Extend video
+    </button>
+</div>
+            <video
+                id="videoPlayer"
+                controls
+                playsinline
+                preload="metadata"
+            ></video>
+
+            <h1 id="videoTitle"></h1>
+
+            <p id="description"></p>
+            <div id="viewCount">0 views</div>
+            <div id="details"></div>
+        </section>
+    </main>
+
+    <section class="comments-section">
+    <h2>Comments</h2>
+
+<script src="https://giscus.app/client.js"
+        data-repo="usethedabrig-cyber/video-comments"
+        data-repo-id="R_kgDOTXlgrA"
+        data-category="Video Comments"
+        data-category-id="DIC_kwDOTXlgrM4DBI4b"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="dark"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+    <div id="commentsContainer"></div>
+</section>
+
+    <script src="/vid/script.js"></script>
+</body>
+</html>
