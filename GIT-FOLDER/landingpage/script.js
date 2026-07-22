@@ -311,12 +311,12 @@ function loadVideoComments(videoId) {
      */
     script.setAttribute(
         "data-repo",
-        "usethedabrig-cyber/video-comments"
+        "yourgithubaccountusername/video-comments"
     );
 
     script.setAttribute(
         "data-repo-id",
-        "R_kgDOTXlgrA"
+        "xxxxxxxxxxxx"
     );
 
     script.setAttribute(
@@ -326,7 +326,7 @@ function loadVideoComments(videoId) {
 
     script.setAttribute(
         "data-category-id",
-        "DIC_kwDOTXlgrM4DBI4b"
+        "xxxxxxxxxxxx"
     );
 
     script.setAttribute(
